@@ -17,10 +17,6 @@ public class Group {
     @Column(name = "name")
     private String name;
 
-    /*@ManyToOne
-    @Column(name = "groups_id")
-    private Additive groups;*/
-
     public Group(String name) {
         this.name = name;
     }
