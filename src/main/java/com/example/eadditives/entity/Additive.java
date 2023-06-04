@@ -20,8 +20,11 @@ public class Additive {
     private String name;
     @Column(name = "name_eng")
     private String engName;
+    @Column(name = "risk")
+    private String risk;
     @Column(name = "description")
     private String description;
+
 
     @ManyToMany
     @JoinTable(
@@ -30,11 +33,12 @@ public class Additive {
             inverseJoinColumns = @JoinColumn(name = "group_id"))
     Set<Group> groupLikes;
 
-    public Additive(String code, String name, String engName, String description) {
+    public Additive(String code, String name, String engName, String description, String risk) {
         this.code = code;
         this.name = name;
         this.engName = engName;
         this.description = description;
+        this.risk = risk;
     }
 
     public Integer getId() {
@@ -68,6 +72,14 @@ public class Additive {
     public void setEng_name(String engName) {
         this.engName = engName;
 
+    }
+
+    public String getRisk() {
+        return risk;
+    }
+
+    public void setRisk(String risk) {
+        this.risk = risk;
     }
 
     public String getDescription() {
