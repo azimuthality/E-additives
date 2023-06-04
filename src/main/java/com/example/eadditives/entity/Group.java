@@ -17,6 +17,9 @@ public class Group {
     @Column(name = "name")
     private String name;
 
+    @ManyToMany(mappedBy = "groupLikes")
+    Set<Additive> likes;
+
     public Group(String name) {
         this.name = name;
     }

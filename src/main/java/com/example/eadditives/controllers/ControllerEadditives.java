@@ -14,6 +14,7 @@ public class ControllerEadditives {
 
     @Autowired
     AdditiveRepository additiveRepository;
+
     @GetMapping("/code")
     public ResponseEntity<List<Additive>> getAddByCode(@RequestParam String code) {
         return new ResponseEntity<List<Additive>>(additiveRepository.findByCode(code), HttpStatus.OK);
